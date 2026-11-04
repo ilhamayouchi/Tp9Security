@@ -1,0 +1,145 @@
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #4338ca;
+    --admin: #dc2626;
+    --admin-dark: #b91c1c;
+    --bg-1: #eef2ff;
+    --bg-2: #e0e7ff;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #d1d5db;
+    --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    color: var(--text);
+    background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+}
+
+/* ---------- Carte principale ---------- */
+.container {
+    width: 100%;
+    max-width: 440px;
+    margin: 24px;
+    padding: 36px 32px;
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+    animation: fadeIn .4s ease;
+}
+
+h2 {
+    margin: 0 0 8px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+p.subtitle {
+    margin: 0 0 24px;
+    text-align: center;
+    color: var(--muted);
+}
+
+/* ---------- Formulaire ---------- */
+label {
+    display: block;
+    margin: 16px 0 6px;
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, .2);
+}
+
+/* ---------- Boutons ---------- */
+button,
+.btn {
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: var(--primary);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background .2s, transform .1s;
+}
+
+button:hover, .btn:hover { background: var(--primary-dark); }
+button:active, .btn:active { transform: scale(.98); }
+
+.btn-admin { background: var(--admin); }
+.btn-admin:hover { background: var(--admin-dark); }
+
+.btn-outline {
+    color: var(--primary);
+    background: transparent;
+    border: 2px solid var(--primary);
+}
+.btn-outline:hover { color: #fff; background: var(--primary); }
+
+/* ---------- Messages ---------- */
+.error, .success {
+    margin: 16px 0 0;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: .92rem;
+}
+.error   { color: #991b1b; background: #fee2e2; border: 1px solid #fecaca; }
+.success { color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; }
+
+/* ---------- Badges de rôle ---------- */
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: #fff;
+    background: var(--primary);
+    border-radius: 999px;
+}
+.badge-admin { background: var(--admin); }
+
+.center { text-align: center; }
+
+/* ---------- Liens ---------- */
+a { color: var(--primary); }
+.back-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    font-size: .9rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}

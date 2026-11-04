@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Espace Utilisateur</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <div class="center"><span class="badge">ROLE_USER</span></div>
+    <h2>Espace Utilisateur</h2>
+    <p class="subtitle">Bienvenue, <b th:text="${#authentication.name}">utilisateur</b> !</p>
+    <a class="btn btn-outline" th:href="@{/}">Accueil</a>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Se déconnecter</button>
+    </form>
+</div>
+</body>
+</html>
