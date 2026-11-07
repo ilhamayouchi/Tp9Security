@@ -7,28 +7,24 @@
 </head>
 <body>
 <div class="container login-container">
-    <h2>Veuillez vous identifier</h2>
+    <h2>Authentification</h2>
     <p class="subtitle">Accédez à votre espace sécurisé</p>
 
     <div th:if="${param.error}" class="error">
-        Identifiant ou mot de passe invalide.
+        Identifiants incorrects, veuillez réessayer.
     </div>
     <div th:if="${param.logout}" class="success">
-        Vous avez été déconnecté avec succès.
+        Vous êtes déconnecté avec succès.
     </div>
 
-    <form th:action="@{/login}" method="post">
-        <div>
-            <label>Nom d'utilisateur :</label>
-            <input type="text" name="username" required />
-        </div>
-        <div>
-            <label>Mot de passe :</label>
-            <input type="password" name="password" required />
-        </div>
-        <div>
-            <button type="submit">Se connecter</button>
-        </div>
+    <form th:action="@{/authenticate}" method="post">
+        <label>Nom d'utilisateur :</label>
+        <input type="text" name="username" placeholder="Saisir le nom d'utilisateur" required>
+
+        <label>Mot de passe :</label>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+
+        <button type="submit">Se connecter</button>
     </form>
 </div>
 </body>
